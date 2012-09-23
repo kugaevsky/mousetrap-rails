@@ -25,8 +25,7 @@ Add to your `app/assets/javascripts/application.js` file
 
 Voila!
 
-
-## Latest (may be unstable) version
+### Latest (may be unstable) version
 
 Instead of `gem 'mousetrap-rails'` add to your Gemfile
 
