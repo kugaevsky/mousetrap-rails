@@ -1,4 +1,4 @@
-# Mousetrap::Rails [![endorse](http://api.coderwall.com/kugaevsky/endorsecount.png)](http://coderwall.com/kugaevsky)
+# Mousetrap::Rails [![endorse](http://api.coderwall.com/kugaevsky/endorsecount.png)](http://coderwall.com/kugaevsky) [![Build Status](https://secure.travis-ci.org/kugaevsky/mousetrap-rails.png)](http://travis-ci.org/kugaevsky/mousetrap-rails) [![Dependency Status](https://gemnasium.com/kugaevsky/mousetrap-rails.png)](https://gemnasium.com/kugaevsky/mousetrap-rails) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/kugaevsky/mousetrap-rails)
 
 [Mousetrap](https://github.com/ccampbell/mousetrap) is a javascript library for handling keyboard shortcuts in your web applications written by [Craig Campbell](http://craig.is/).
 
