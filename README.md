@@ -4,6 +4,7 @@
 
 The `mousetrap-rails` gem integrates Moustrap javascript library with Rails Asset Pipeline.
 
+
 ## Installation
 
 ### Install mousetrap-rails gem
@@ -23,6 +24,14 @@ Add to your `app/assets/javascripts/application.js` file
     //= require mousetrap
 
 Voila!
+
+
+## Latest (may be unstable) version
+
+Instead of `gem 'mousetrap-rails'` add to your Gemfile
+
+    gem 'mousetrap-rails', git: 'git://github.com/kugaevsky/mousetrap-rails.git'
+
 
 ## Usage
 
@@ -59,8 +68,8 @@ Mousetrap.bind '* a', -> console.log '* a sequence pressed!'
 Mousetrap.bind 'up up down down left right left right b a enter', -> console.log 'You WIN!'
 ```
 
-
 You can find full documentation on [Moustrap library page](http://craig.is/killing/mice). Really, look there – there are plenty examples of using this awesome library.
+
 
 ## Authors
 
