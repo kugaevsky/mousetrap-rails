@@ -83,6 +83,16 @@ Mousetrap.bind 'up up down down left right left right b a enter', -> console.log
 You can find full documentation on [Mousetrap library page](http://craig.is/killing/mice). Really, look there – there are plenty examples of using this awesome library.
 
 
+## Changelog
+
+All changes could be found in [CHANGELOG.md](https://github.com/kugaevsky/mousetrap-rails/blob/master/CHANGELOG.md)
+
+
+## License
+
+Gosh! It's [here](https://github.com/kugaevsky/mousetrap-rails/blob/master/LICENSE.md).
+
+
 ## Authors
 
 * mousetrap-rails gem by [Nick Kugaevsky](http://kugaevsky.ru)
