@@ -38,11 +38,15 @@ Instead of `gem 'mousetrap-rails'` add to your Gemfile
 
 You can add keyboard navigation to your links by using `data-keybinding` attribute.
 
-    = link_to 'Homepage', root_path, data: { keybinding: 'h' }      # Press 'h' to navigate to homepage
+```coffeescript
+= link_to 'Homepage', root_path, data: { keybinding: 'h' }      # Press 'h' to navigate to homepage
+```
 
 You can jump to input
 
-    = text_field_tag 'Username', nil, data: { keybinding: 'u' }      # Press 'u' to focus username input field
+```coffeescript
+= text_field_tag 'Username', nil, data: { keybinding: 'u' }      # Press 'u' to focus username input field
+```
 
 ### Via javascript
 
