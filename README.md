@@ -2,7 +2,7 @@
 
 [Mousetrap](https://github.com/ccampbell/mousetrap) is a javascript library for handling keyboard shortcuts in your web applications written by [Craig Campbell](http://craig.is/).
 
-The `mousetrap-rails` gem integrates Moustrap javascript library with Rails Asset Pipeline.
+The `mousetrap-rails` gem integrates Mousetrap javascript library with Rails Asset Pipeline.
 
 
 ## Installation
@@ -86,4 +86,4 @@ You can find full documentation on [Mousetrap library page](http://craig.is/kill
 ## Authors
 
 * mousetrap-rails gem by [Nick Kugaevsky](http://kugaevsky.ru)
-* original moustrap library by [Craig Campbell](http://craig.is/)
+* original mousetrap library by [Craig Campbell](http://craig.is/)
