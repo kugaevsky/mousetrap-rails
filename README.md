@@ -74,8 +74,8 @@ You can find full documentation on [Moustrap library page](http://craig.is/killi
 
 * Generators
 * Helpers
-** Keyboard navigation for links
-** Keyboard navigation for inputs
+    * Keyboard navigation for links
+    * Keyboard navigation for inputs
 
 
 ## Authors
