@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Nick Kugaevsky"]
   gem.email         = ["nick@kugaevsky.ru"]
   gem.description   = %q{Mousetrap is a javascript library for handling keyboard shortcuts in your web applications. This gem integrates Mousetrap with Rails asset pipeline for easy of use.}
-  gem.summary       = %q{Integrate Moustrap javascript library with Rails Asset Pipeline}
+  gem.summary       = %q{Integrate Mousetrap javascript library with Rails Asset Pipeline}
   gem.homepage      = "https://github.com/kugaevsky/mousetrap-rails"
 
   gem.files         = `git ls-files`.split($/)
