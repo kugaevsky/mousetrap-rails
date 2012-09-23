@@ -76,15 +76,7 @@ Mousetrap.bind '* a', -> console.log '* a sequence pressed!'
 Mousetrap.bind 'up up down down left right left right b a enter', -> console.log 'You WIN!'
 ```
 
-You can find full documentation on [Moustrap library page](http://craig.is/killing/mice). Really, look there – there are plenty examples of using this awesome library.
-
-
-## TODO
-
-* Generators
-* Helpers
-    * Keyboard navigation for links
-    * Keyboard navigation for inputs
+You can find full documentation on [Mousetrap library page](http://craig.is/killing/mice). Really, look there – there are plenty examples of using this awesome library.
 
 
 ## Authors
