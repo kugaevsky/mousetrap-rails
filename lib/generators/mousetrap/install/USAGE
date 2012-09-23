@@ -4,5 +4,6 @@ Description:
 Example:
     rails generate mousetrap:install
 
-    This will create:
-        `mousetrap.js.coffee` file in your `app/assets/javascripts` directory
+    This will:
+        Create `keybindings.js.coffee' file in your `app/assets/javascripts' directory
+        And add `//= require mousetrap' line to `application.js' file to include library to Rails Asset Pipeline
