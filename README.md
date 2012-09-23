@@ -7,7 +7,7 @@ The `mousetrap-rails` gem integrates Moustrap javascript library with Rails Asse
 
 ## Installation
 
-### Install mousetrap-rails gem
+### Add mousetrap-rails gem to app
 
 Add this line to your application's Gemfile:
 
@@ -17,11 +17,11 @@ And then execute:
 
     $ bundle install
 
-### Include moustrap to asset pipeline
+### Run generator
 
-Add to your `app/assets/javascripts/application.js` file
+    $ rails generate mousetrap:install
 
-    //= require mousetrap
+It will create sample `keybindings.js.coffee` file in `app/assets/javascripts` and add `//= require mousetrap` to `application.js` manifest.
 
 Voila!
 
@@ -34,29 +34,38 @@ Instead of `gem 'mousetrap-rails'` add to your Gemfile
 
 ## Usage
 
-Now you can use Moustrap library features in your rails application. To test it out create coffeescript file in your `app/assets/javascripts` directory and add to it this code
+### Via data-attributes
+
+You can add keyboard navigation to your links by using `data-keybinding` attribute.
+
+    = link_to 'Homepage', root_path, data: { keybinding: 'h' }      # Press 'h' to navigate to homepage
+
+You can jump to input
+
+    = text_field_tag 'Username', nil, data: { keybinding: 'u' }      # Press 'u' to focus username input field
+
+### Via javascript
+
+Any javascript function can be called with mousetrap
 
 ```coffeescript
-# app/assets/javascripts/test_hotkeys.js.coffee
-Mousetrap.bind 's', -> console.log 's pressed!'
+Mousetrap.bind 'f', (e) -> alert 'My perfect function called'
 ```
 
-Run application and press `s` on your keyboard. You should see `s pressed!` message in your javascript console.
-
-### More examples
+### More examples (from official guide)
 
 ```coffeescript
 # single keys
-Mousetrap.bind '4', -> console.log '4 pressed!'
-Mousetrap.bind 'x', (-> console.log 'x pressed!'), 'keyup'
+Mousetrap.bind '4', -> alert '4 pressed!'
+Mousetrap.bind 'x', (-> alert 'x pressed!'), 'keyup'
 
 # combinations
 Mousetrap.bind 'command+shift+k', ->
-  console.log 'command+shift+k pressed!'
+  alert 'command+shift+k pressed!'
   false
 
 Mousetrap.bind ['command+k', 'ctrl+k'], ->
-  console.log 'command+k or ctrl+k pressed!'
+  alert 'command+k or ctrl+k pressed!'
   false
 
 # gmail style sequences
