@@ -1,0 +1,8 @@
+Description:
+    Mousetrap generator installs mousetrap javascript library in your Rails application
+
+Example:
+    rails generate mousetrap:install
+
+    This will create:
+        `mousetrap.js.coffee` file in your `app/assets/javascripts` directory
