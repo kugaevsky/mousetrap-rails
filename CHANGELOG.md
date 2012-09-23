@@ -1,6 +1,6 @@
 ## v0.0.3
 
-* add development dependecies
+* add development dependencies
 * add tests for generators
 
 ## v0.0.2
