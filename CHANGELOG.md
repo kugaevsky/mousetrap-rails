@@ -1,4 +1,6 @@
-## v0.0.4.alpha
+## v0.0.5.wip
+
+## v0.0.4
 
 * add key binding hints (experimental)
 
