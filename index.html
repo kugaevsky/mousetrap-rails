@@ -74,7 +74,11 @@
 <pre><code>$ rails generate mousetrap:install
 </code></pre>
 
-<p>It will create sample <code>keybindings.js.coffee</code> file in <code>app/assets/javascripts</code> and add <code>//= require mousetrap</code> to <code>application.js</code> manifest.</p>
+<p>It will create sample <code>keybindings.js.coffee</code> file in <code>app/assets/javascripts</code> and insert mousetrap-rails files to manifests of assert pipeline</p>
+
+<pre><code>//= require mousetrap     # ---&gt; application.js
+*= require mousetrap      # ---&gt; application.css
+</code></pre>
 
 <p>Voila!</p>
 
@@ -130,6 +134,10 @@
 </pre></div>
 
 <p>You can find full documentation on <a href="http://craig.is/killing/mice">Mousetrap library page</a>. Really, look there – there are plenty examples of using this awesome library.</p>
+
+<h3>Key binding hints (experimental)</h3>
+
+<p>You can display key binding hints near links with <code>data-keybinding</code> attribute by pressing <code>Alt+Shift+h</code>. Now it's just experimental feature for debugging purposes only.</p>
 
 <h2>Changelog</h2>
 
