@@ -1,10 +1,10 @@
 $ ->
-  # Hotkey binding to links with 'data-keybindings' attribute
+  # Hotkey binding to links with 'data-keybinding' attribute
   # Navigate link when hotkey pressed
   $('a[data-keybinding]').each (i, el) ->
     Mousetrap.bind $(el).data('keybinding'), (e) -> el.click()
 
-  # Hotkey binding to inputs with 'data-keybindings' attribute
+  # Hotkey binding to inputs with 'data-keybinding' attribute
   # Focus input when hotkey pressed
   $('input[data-keybinding]').each (i, el) ->
     Mousetrap.bind $(el).data('keybinding'), (e) ->
@@ -14,10 +14,11 @@ $ ->
       else
         e.returnValue = false
 
-  # Show/hide hotkey hints for mousetrap
+  # Toggle show/hide hotkey hints
   window.mouseTrapRails =
-    keysShown: false            # Show/hide hotkey hints by default (on page load)
-    toggleKeys: 'm t h'         # Key sequence to toggle hints visibility
+    showOnLoad: false           # Show/hide hotkey hints by default (on page load). Mostly for debugging purposes.
+    toggleKeys: 'alt+shift+h'   # Key sequence to toggle hints visibility.
+    keysShown: false
     toggleHints:  ->
       $('a[data-keybinding]').each (i, el) ->
         $el = $(el)
@@ -30,5 +31,7 @@ $ ->
           $el.append $hint
       @keysShown ^= true
 
-  mouseTrapRails.toggleHints if mouseTrapRails.keysShown
   Mousetrap.bind mouseTrapRails.toggleKeys, -> mouseTrapRails.toggleHints()
+
+  mouseTrapRails.toggleHints() if mouseTrapRails.showOnLoad
+
