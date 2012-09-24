@@ -18,7 +18,7 @@ module Mousetrap
 
       def add_css_assets
         if File.exist?('app/assets/stylesheets/application.css')
-          insert_into_file "app/assets/stylesheets/application.css", "*= require keybindings\n ", :before => "*= require_tree ."
+          insert_into_file "app/assets/stylesheets/application.css", "*= require mousetrap\n ", :before => "*= require_tree ."
         else
           copy_file "application.css", "app/assets/stylesheets/application.css"
         end
