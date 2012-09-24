@@ -1,0 +1,37 @@
+.mt-hotkey-el {
+  position: relative; }
+
+a[data-keybinding] .mt-hotkey-hint {
+  display: block;
+  float: right;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  z-index: 999;
+  font: bold 13px/1em sans-serif;
+  text-decoration: none;
+  text-indent: 0;
+  text-align: center;
+  vertical-align: center;
+  margin: 0;
+  padding: 0.3ex 0.7ex;
+  background: beige;
+  color: black;
+  text-shadow: 1px 1px 0 white;
+  box-shadow: 1px 1px 0 #333333;
+  border-radius: 5px;
+  border: 1px solid #888888;
+  opacity: 0.75;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
+  a[data-keybinding] .mt-hotkey-hint:hover {
+    background: white;
+    opacity: 1;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25); }

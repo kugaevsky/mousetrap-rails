@@ -1,0 +1,50 @@
+$mtFont:        bold 13px/1em sans-serif
+$mtBackground:  beige
+$mtColor:       black
+$mtTextShadow:  1px 1px 0 white
+$mtBoxShadow:   1px 1px 0 #333
+$mtOpacity:     .75
+
+@mixin transition($styles)
+  -webkit-transition: $styles
+  -moz-transition: $styles
+  -o-transition: $styles
+  -ms-transition: $styles
+  transition: $styles
+
+@mixin transform($styles)
+  -webkit-transform: $styles
+  -moz-transform: $styles
+  -o-transform: $styles
+  -ms-transform: $styles
+  transform: $styles
+
+.mt-hotkey-el
+  position: relative
+a[data-keybinding]
+  .mt-hotkey-hint
+    display: block
+    float: right
+    position: absolute
+    top: -4px
+    right: -4px
+    z-index: 999
+    font: $mtFont
+    text-decoration: none
+    text-indent: 0
+    text-align: center
+    vertical-align: center
+    margin: 0
+    padding: 0.3ex 0.7ex
+    background: $mtBackground
+    color: $mtColor
+    text-shadow: $mtTextShadow
+    box-shadow: $mtBoxShadow
+    border-radius: 5px
+    border: 1px solid #888
+    opacity: $mtOpacity
+    @include transition(all .15s linear)
+    &:hover
+      background: white
+      opacity: $mtOpacity + 0.25
+      @include transform(scale(1.25))
