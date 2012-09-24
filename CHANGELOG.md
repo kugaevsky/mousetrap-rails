@@ -1,3 +1,7 @@
+## v0.0.4.alpha
+
+* add key binding hints (experimental)
+
 ## v0.0.3
 
 * add development dependencies
