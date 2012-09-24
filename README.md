@@ -21,7 +21,10 @@ And then execute:
 
     $ rails generate mousetrap:install
 
-It will create sample `keybindings.js.coffee` file in `app/assets/javascripts` and add `//= require mousetrap` to `application.js` manifest.
+It will create sample `keybindings.js.coffee` file in `app/assets/javascripts` and insert mousetrap-rails files to manifests of assert pipeline
+
+    //= require mousetrap     # ---> application.js
+    *= require moustrap       # ---> application.css
 
 Voila!
 
@@ -81,6 +84,10 @@ Mousetrap.bind 'up up down down left right left right b a enter', -> console.log
 ```
 
 You can find full documentation on [Mousetrap library page](http://craig.is/killing/mice). Really, look there – there are plenty examples of using this awesome library.
+
+### Key binding hints (experimental)
+
+You can display key binding hints near links with `data-keybinding` attribute by pressing `Alt+Shift+h`. Now it's just experimental feature for debugging purposes only.
 
 
 ## Changelog
