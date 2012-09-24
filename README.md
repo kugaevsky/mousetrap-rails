@@ -24,7 +24,7 @@ And then execute:
 It will create sample `keybindings.js.coffee` file in `app/assets/javascripts` and insert mousetrap-rails files to manifests of assert pipeline
 
     //= require mousetrap     # ---> application.js
-    *= require moustrap       # ---> application.css
+    *= require mousetrap      # ---> application.css
 
 Voila!
 
