@@ -1,4 +1,6 @@
-## v0.0.5.wip
+## v0.0.5
+
+* update mousetrap.js to 1.1.4 (old Firefox versions support)
 
 ## v0.0.4
 
