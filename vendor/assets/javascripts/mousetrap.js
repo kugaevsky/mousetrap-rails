@@ -16,7 +16,7 @@
  * Mousetrap is a simple keyboard shortcut library for Javascript with
  * no external dependencies
  *
- * @version 1.1.4
+ * @version 1.2
  * @url craig.is/killing/mice
  */
 (function() {
@@ -378,8 +378,14 @@
      * @param {Event} e
      * @returns void
      */
-    function _fireCallback(callback, e) {
-        if (callback(e) === false) {
+    function _fireCallback(callback, e, combo) {
+
+        // if this event should not happen stop here
+        if (Mousetrap.stopCallback(e, e.target || e.srcElement, combo)) {
+            return;
+        }
+
+        if (callback(e, combo) === false) {
             if (e.preventDefault) {
                 e.preventDefault();
             }
@@ -401,12 +407,6 @@
      * @returns void
      */
     function _handleCharacter(character, e) {
-
-        // if this event should not happen stop here
-        if (Mousetrap.stopCallback(e, e.target || e.srcElement)) {
-            return;
-        }
-
         var callbacks = _getMatches(character, _eventModifiers(e), e),
             i,
             do_not_reset = {},
@@ -425,14 +425,14 @@
 
                 // keep a list of which sequences were matches for later
                 do_not_reset[callbacks[i].seq] = 1;
-                _fireCallback(callbacks[i].callback, e);
+                _fireCallback(callbacks[i].callback, e, callbacks[i].combo);
                 continue;
             }
 
             // if there were no sequence matches but we are still here
             // that means this is a regular match so we should fire that
             if (!processed_sequence_callback && !_inside_sequence) {
-                _fireCallback(callbacks[i].callback, e);
+                _fireCallback(callbacks[i].callback, e, callbacks[i].combo);
             }
         }
 
@@ -587,7 +587,7 @@
              * @returns void
              */
             _callbackAndReset = function(e) {
-                _fireCallback(callback, e);
+                _fireCallback(callback, e, combo);
 
                 // we should ignore the next key up if the action is key down
                 // or keypress.  this is so if you finish a sequence and
@@ -791,7 +791,7 @@
         * @param {Element} element
         * @return {boolean}
         */
-        stopCallback: function(e, element) {
+        stopCallback: function(e, element, combo) {
 
             // if the element has the class "mousetrap" then no need to stop
             if ((' ' + element.className + ' ').indexOf(' mousetrap ') > -1) {
@@ -807,7 +807,7 @@
     window.Mousetrap = Mousetrap;
 
     // expose mousetrap as an AMD module
-    if (typeof define == 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
         define('mousetrap', function() { return Mousetrap; });
     }
 }) ();
