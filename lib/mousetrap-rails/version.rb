@@ -1,5 +1,5 @@
 module Mousetrap
   module Rails
-    VERSION = "0.0.6.wip"
+    VERSION = "0.0.6"
   end
 end
