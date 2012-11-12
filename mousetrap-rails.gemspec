@@ -26,7 +26,7 @@ Gem::Specification.new do |gem|
   gem.licenses      = ['MIT', 'Apache']
   gem.post_install_message =  <<MSG
 
-\033[33mRemeber to run generator to generate sample file and include mousetrap-rails with Rails Asset Pipeline\033[0m
+\033[33mRemember to run generator to generate sample file and include mousetrap-rails with Rails Asset Pipeline\033[0m
 
     \033[32m$ rails generate mousetrap:install \033[0m
 
