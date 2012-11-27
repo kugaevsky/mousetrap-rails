@@ -16,7 +16,7 @@
  * Mousetrap is a simple keyboard shortcut library for Javascript with
  * no external dependencies
  *
- * @version 1.2
+ * @version 1.2.1
  * @url craig.is/killing/mice
  */
 (function() {
@@ -808,6 +808,6 @@
 
     // expose mousetrap as an AMD module
     if (typeof define === 'function' && define.amd) {
-        define('mousetrap', function() { return Mousetrap; });
+        define(Mousetrap);
     }
 }) ();
