@@ -1,5 +1,7 @@
 ## v0.0.8.wip
 
+* update rspec-rails version development dependency
+
 ## v0.0.7
 
 * update mousetrap.js to 1.2.1
