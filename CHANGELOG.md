@@ -1,4 +1,6 @@
-## v0.0.7.wip
+## v0.0.7
+
+* update mousetrap.js to 1.2.1
 
 ## v0.0.6
 
