@@ -16,7 +16,7 @@
  * Mousetrap is a simple keyboard shortcut library for Javascript with
  * no external dependencies
  *
- * @version 1.2.1
+ * @version 1.2.2
  * @url craig.is/killing/mice
  */
 (function() {
@@ -178,7 +178,7 @@
          *
          * @type {boolean|string}
          */
-        _inside_sequence = false;
+        _sequence_type = false;
 
     /**
      * loop through the f keys, f1 to f19 and add them to the map
@@ -255,14 +255,14 @@
      * @param {Object} do_not_reset
      * @returns void
      */
-    function _resetSequences(do_not_reset) {
+    function _resetSequences(do_not_reset, max_level) {
         do_not_reset = do_not_reset || {};
 
         var active_sequences = false,
             key;
 
         for (key in _sequence_levels) {
-            if (do_not_reset[key]) {
+            if (do_not_reset[key] && _sequence_levels[key] > max_level) {
                 active_sequences = true;
                 continue;
             }
@@ -270,7 +270,7 @@
         }
 
         if (!active_sequences) {
-            _inside_sequence = false;
+            _sequence_type = false;
         }
     }
 
@@ -410,6 +410,7 @@
         var callbacks = _getMatches(character, _eventModifiers(e), e),
             i,
             do_not_reset = {},
+            max_level = 0,
             processed_sequence_callback = false;
 
         // loop through matching callbacks for this key event
@@ -423,6 +424,10 @@
             if (callbacks[i].seq) {
                 processed_sequence_callback = true;
 
+                // as we loop through keep track of the max
+                // any sequence at a lower level will be discarded
+                max_level = Math.max(max_level, callbacks[i].level);
+
                 // keep a list of which sequences were matches for later
                 do_not_reset[callbacks[i].seq] = 1;
                 _fireCallback(callbacks[i].callback, e, callbacks[i].combo);
@@ -431,7 +436,7 @@
 
             // if there were no sequence matches but we are still here
             // that means this is a regular match so we should fire that
-            if (!processed_sequence_callback && !_inside_sequence) {
+            if (!processed_sequence_callback && !_sequence_type) {
                 _fireCallback(callbacks[i].callback, e, callbacks[i].combo);
             }
         }
@@ -439,8 +444,8 @@
         // if you are inside of a sequence and the key you are pressing
         // is not a modifier key then we should reset all sequences
         // that were not matched by this key event
-        if (e.type == _inside_sequence && !_isModifier(character)) {
-            _resetSequences(do_not_reset);
+        if (e.type == _sequence_type && !_isModifier(character)) {
+            _resetSequences(do_not_reset, max_level);
         }
     }
 
@@ -574,7 +579,7 @@
          * @returns void
          */
         var _increaseSequence = function(e) {
-                _inside_sequence = action;
+                _sequence_type = action;
                 ++_sequence_levels[combo];
                 _resetSequenceTimer();
             },
