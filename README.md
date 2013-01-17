@@ -11,20 +11,28 @@ The `mousetrap-rails` gem integrates Mousetrap javascript library with Rails Ass
 
 Add this line to your application's Gemfile:
 
-    gem 'mousetrap-rails'
+```ruby
+gem 'mousetrap-rails'
+```
 
 And then execute:
 
-    $ bundle install
+```bash
+$ bundle install
+```
 
 ### Run generator
 
-    $ rails generate mousetrap:install
+```bash
+$ rails generate mousetrap:install
+```
 
 It will create sample `keybindings.js.coffee` file in `app/assets/javascripts` and insert mousetrap-rails files to manifests of assert pipeline
 
-    //= require mousetrap     # ---> application.js
-    *= require mousetrap      # ---> application.css
+```coffeescript
+//= require mousetrap     # ---> application.js
+*= require mousetrap      # ---> application.css
+```
 
 Voila!
 
@@ -32,8 +40,9 @@ Voila!
 
 Instead of `gem 'mousetrap-rails'` add to your Gemfile
 
-    gem 'mousetrap-rails', github: 'kugaevsky/mousetrap-rails'
-
+```ruby
+gem 'mousetrap-rails', github: 'kugaevsky/mousetrap-rails'
+```
 
 ## Usage
 
