@@ -32,7 +32,7 @@ Voila!
 
 Instead of `gem 'mousetrap-rails'` add to your Gemfile
 
-    gem 'mousetrap-rails', git: 'git://github.com/kugaevsky/mousetrap-rails.git'
+    gem 'mousetrap-rails', github: 'kugaevsky/mousetrap-rails'
 
 
 ## Usage
