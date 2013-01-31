@@ -1,5 +1,7 @@
 ## v0.0.9.wip
 
+* sign gem with selfsigned certificate
+
 ## v0.0.8
 
 * update rspec-rails version development dependency
