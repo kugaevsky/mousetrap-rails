@@ -1,6 +1,7 @@
 ## v0.0.9.wip
 
 * sign gem with selfsigned certificate
+* update mousetrap.js to 1.3
 
 ## v0.0.8
 
