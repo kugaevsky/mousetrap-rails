@@ -2,7 +2,7 @@
 
 [Mousetrap](https://github.com/ccampbell/mousetrap) is a javascript library for handling keyboard shortcuts in your web applications written by [Craig Campbell](http://craig.is/).
 
-The `mousetrap-rails` gem integrates Mousetrap javascript library with Rails Asset Pipeline.
+The `mousetrap-rails` gem integrates Mousetrap javascript library with Rails asset pipeline.
 
 
 ## Installation
@@ -27,7 +27,7 @@ $ bundle install
 $ rails generate mousetrap:install
 ```
 
-It will create sample `keybindings.js.coffee` file in `app/assets/javascripts` and insert mousetrap-rails files to manifests of assert pipeline
+It will create a sample `keybindings.js.coffee` file in `app/assets/javascripts` and insert mousetrap-rails files to manifests of asset pipeline
 
 ```coffeescript
 //= require mousetrap     # ---> application.js
@@ -55,7 +55,7 @@ You can add keyboard navigation to your links by using `data-keybinding` attribu
 = link_to 'About', about_path, data: { keybinding: '["a", "c"]' }   # Press 'a' or 'c' to navigate to about
 ```
 
-You can jump to input
+You can jump to an input
 
 ```haml
 = text_field_tag 'Username', nil, data: { keybinding: 'u' }     # Press 'u' to focus username input field
