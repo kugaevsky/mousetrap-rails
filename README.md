@@ -99,6 +99,16 @@ You can find full documentation on [Mousetrap library page](http://craig.is/kill
 
 You can display key binding hints near links with `data-keybinding` attribute by pressing `Alt+Shift+h`. Now it's just experimental feature for debugging purposes only.
 
+## TODO
+
+* Add moustrap extensions generator
+
+## Contributing
+
+Please submit all pull requests against latest `*.wip` branch. If your pull request contains new features, you **must** include relevant tests.
+
+Thanks in advance!
+
 
 ## Changelog
 

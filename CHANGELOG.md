@@ -1,5 +1,7 @@
 ## v0.0.10.wip
 
+- TODO: Add moustrap extensions generator
+
 ## v0.0.9
 
 * sign gem with selfsigned certificate
