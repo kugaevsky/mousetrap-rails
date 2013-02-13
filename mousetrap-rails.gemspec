@@ -20,7 +20,7 @@ Gem::Specification.new do |gem|
   gem.signing_key = '/Users/nick/.ssh/gem-private_key.pem'
   gem.cert_chain  = ['gem-public_cert.pem']
 
-  gem.add_development_dependency 'rails', '~> 3.2.11'
+  gem.add_development_dependency 'rails', '~> 3.2.12'
   gem.add_development_dependency 'sqlite3', '~> 1.3.5'
   gem.add_development_dependency 'rspec-rails', '~> 2.12.0'
   gem.add_development_dependency 'genspec', '~> 0.2.7'
