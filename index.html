@@ -49,11 +49,11 @@
         <h1>Mousetrap::Rails <a href="http://coderwall.com/kugaevsky"><img src="http://api.coderwall.com/kugaevsky/endorsecount.png" alt="endorse"></a>
 </h1>
 
-<p><a href="https://travis-ci.org/kugaevsky/mousetrap-rails"><img src="https://secure.travis-ci.org/kugaevsky/mousetrap-rails.png?branch=master" alt="Build Status"></a> <a href="https://gemnasium.com/kugaevsky/mousetrap-rails"><img src="https://gemnasium.com/kugaevsky/mousetrap-rails.png" alt="Dependency Status"></a> <a href="https://codeclimate.com/github/kugaevsky/mousetrap-rails"><img src="https://codeclimate.com/badge.png" alt="Code Climate"></a></p>
+<p><a href="https://gemnasium.com/kugaevsky/mousetrap-rails"><img src="https://gemnasium.com/kugaevsky/mousetrap-rails.png" alt="Dependency Status"></a> <a href="https://codeclimate.com/github/kugaevsky/mousetrap-rails"><img src="https://codeclimate.com/github/kugaevsky/mousetrap-rails.png" alt="Code Climate"></a> <a href="https://travis-ci.org/kugaevsky/mousetrap-rails"><img src="https://travis-ci.org/kugaevsky/mousetrap-rails.png?branch=master" alt="Build Status"></a></p>
 
 <p><a href="https://github.com/ccampbell/mousetrap">Mousetrap</a> is a javascript library for handling keyboard shortcuts in your web applications written by <a href="http://craig.is/">Craig Campbell</a>.</p>
 
-<p>The <code>mousetrap-rails</code> gem integrates Mousetrap javascript library with Rails Asset Pipeline.</p>
+<p>The <code>mousetrap-rails</code> gem integrates Mousetrap javascript library with Rails asset pipeline.</p>
 
 <h2>Installation</h2>
 
@@ -61,24 +61,24 @@
 
 <p>Add this line to your application's Gemfile:</p>
 
-<pre><code>gem 'mousetrap-rails'
-</code></pre>
+<div class="highlight"><pre><span class="n">gem</span> <span class="s1">'mousetrap-rails'</span>
+</pre></div>
 
 <p>And then execute:</p>
 
-<pre><code>$ bundle install
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>bundle install
+</pre></div>
 
 <h3>Run generator</h3>
 
-<pre><code>$ rails generate mousetrap:install
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>rails generate mousetrap:install
+</pre></div>
 
-<p>It will create sample <code>keybindings.js.coffee</code> file in <code>app/assets/javascripts</code> and insert mousetrap-rails files to manifests of assert pipeline</p>
+<p>It will create a sample <code>keybindings.js.coffee</code> file in <code>app/assets/javascripts</code> and insert mousetrap-rails files to manifests of asset pipeline</p>
 
-<pre><code>//= require mousetrap     # ---&gt; application.js
-*= require mousetrap      # ---&gt; application.css
-</code></pre>
+<div class="highlight"><pre><span class="o">//=</span> <span class="nx">require</span> <span class="nx">mousetrap</span>     <span class="c1"># ---&gt; application.js</span>
+<span class="o">*=</span> <span class="nx">require</span> <span class="nx">mousetrap</span>      <span class="c1"># ---&gt; application.css</span>
+</pre></div>
 
 <p>Voila!</p>
 
@@ -86,8 +86,8 @@
 
 <p>Instead of <code>gem 'mousetrap-rails'</code> add to your Gemfile</p>
 
-<pre><code>gem 'mousetrap-rails', git: 'git://github.com/kugaevsky/mousetrap-rails.git'
-</code></pre>
+<div class="highlight"><pre><span class="n">gem</span> <span class="s1">'mousetrap-rails'</span><span class="p">,</span> <span class="n">github</span><span class="p">:</span> <span class="s1">'kugaevsky/mousetrap-rails'</span>
+</pre></div>
 
 <h2>Usage</h2>
 
@@ -99,7 +99,7 @@
 <span class="p">=</span> <span class="n">link_to</span> <span class="s1">'About'</span><span class="p">,</span> <span class="n">about_path</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="p">{</span> <span class="n">keybinding</span><span class="p">:</span> <span class="s1">'["a", "c"]'</span> <span class="p">}</span>   <span class="c1"># Press 'a' or 'c' to navigate to about</span>
 </pre></div>
 
-<p>You can jump to input</p>
+<p>You can jump to an input</p>
 
 <div class="highlight"><pre><span class="p">=</span> <span class="n">text_field_tag</span> <span class="s1">'Username'</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="p">{</span> <span class="n">keybinding</span><span class="p">:</span> <span class="s1">'u'</span> <span class="p">}</span>     <span class="c1"># Press 'u' to focus username input field</span>
 </pre></div>
@@ -139,6 +139,16 @@
 <h3>Key binding hints (experimental)</h3>
 
 <p>You can display key binding hints near links with <code>data-keybinding</code> attribute by pressing <code>Alt+Shift+h</code>. Now it's just experimental feature for debugging purposes only.</p>
+
+<h2>TODO</h2>
+
+<ul>
+<li>Add moustrap extensions generator</li>
+</ul><h2>Contributing</h2>
+
+<p>Please submit all pull requests against latest <code>*.wip</code> branch. If your pull request contains new features, you <strong>must</strong> include relevant tests.</p>
+
+<p>Thanks in advance!</p>
 
 <h2>Changelog</h2>
 
