@@ -4,6 +4,8 @@ require File.expand_path("../dummy/config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'genspec'
+require 'coveralls'
+Coveralls.wear!
 
 # Require gem generators
 Dir[Rails.root.join("../../lib/generators/mousetrap/**/*_generator.rb")].each {|f| require f}

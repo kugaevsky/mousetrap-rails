@@ -25,6 +25,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec-rails', '~> 2.13.0'
   gem.add_development_dependency 'genspec', '~> 0.2.7'
   gem.add_development_dependency 'sass', '~> 3.2.1'
+  gem.add_development_dependency 'coveralls'
 
   gem.licenses      = ['MIT', 'Apache']
   gem.post_install_message =  <<MSG
