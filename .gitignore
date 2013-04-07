@@ -4,6 +4,8 @@
 .config
 .yardoc
 .rvmrc
+.ruby-gemset
+.ruby-version
 Gemfile.lock
 InstalledFiles
 _yardoc
