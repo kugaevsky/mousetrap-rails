@@ -1,3 +1,7 @@
+## v0.0.11.wip
+
+* [] Add moustrap extensions generator
+
 ## v0.0.10
 
 * update mousetrap.js to 1.4.1
