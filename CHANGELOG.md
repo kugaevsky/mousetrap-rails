@@ -1,7 +1,7 @@
-## v0.0.10.wip
+## v0.0.10
 
-- [ ] Add moustrap extensions generator
-- [ ] Check against Rails 4 with turbolinks enabled kugaevsky/mousetrap-rails#5
+* update mousetrap.js to 1.4.1
+* use Tubolinks.visit for navigating if Turbolinks defined
 
 ## v0.0.9
 
