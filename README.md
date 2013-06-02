@@ -103,7 +103,6 @@ You can display key binding hints near links with `data-keybinding` attribute by
 ## TODO
 
 - [ ] Add moustrap extensions generator
-- [ ] Check against Rails 4 with turbolinks enabled kugaevsky/mousetrap-rails#5
 
 ## Contributing
 
