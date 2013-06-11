@@ -1,5 +1,6 @@
 ## v0.0.11.wip
 
+* Add update mousetrap.js rake task
 * [] Add moustrap extensions generator
 
 ## v0.0.10

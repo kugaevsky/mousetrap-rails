@@ -108,6 +108,12 @@ You can display key binding hints near links with `data-keybinding` attribute by
 
 Please submit all pull requests against latest `*.wip` branch. If your pull request contains new features, you **must** include relevant tests.
 
+You can easily update mousetrap.js library via rake task.
+
+```bash
+$ rake mousetrap:update
+```
+
 Thanks in advance!
 
 
