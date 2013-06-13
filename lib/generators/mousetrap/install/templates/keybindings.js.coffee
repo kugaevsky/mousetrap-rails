@@ -24,7 +24,7 @@ $ ->
   window.mouseTrapRails =
     showOnLoad: false           # Show/hide hotkey hints by default (on page load). Mostly for debugging purposes.
     toggleKeys: 'alt+shift+h'   # Keys combo to toggle hints visibility.
-    keysShown: false
+    keysShown: false            # State of hotkey hints
     toggleHints:  ->
       $('a[data-keybinding]').each (i, el) ->
         $el = $(el)
