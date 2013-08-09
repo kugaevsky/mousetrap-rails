@@ -1,6 +1,7 @@
 ## v0.0.12.wip
 
 * [] Add moustrap extensions generator
+* fix bug with numbers binding in data attributes
 
 ## v0.0.11
 
