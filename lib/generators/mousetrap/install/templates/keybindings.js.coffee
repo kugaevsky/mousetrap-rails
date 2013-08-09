@@ -2,7 +2,9 @@ $ ->
   # Hotkey binding to links with 'data-keybinding' attribute
   # Navigate link when hotkey pressed
   $('a[data-keybinding]').each (i, el) ->
-    Mousetrap.bind $(el).data('keybinding'), (e) ->
+    bindedKey = $(el).data('keybinding')
+    bindedKey = bindedKey.toString() if typeof(bindedKey) == 'number'
+    Mousetrap.bind bindedKey, (e) ->
       if typeof(Turbolinks) == 'undefined'
         # Emulate click if turbolinks defined
         el.click()
