@@ -1,8 +1,8 @@
 $ ->
-	handleKeyBindings()
+  handleKeyBindings()
 
 $(document).on 'page:change', ->
-	handleKeyBindings()
+  handleKeyBindings()
 
 handleKeyBindings = ->
   # Hotkey binding to links with 'data-keybinding' attribute
