@@ -1,4 +1,10 @@
 $ ->
+  handleKeyBindings()
+
+$(document).on 'page:change', ->
+  handleKeyBindings()
+
+handleKeyBindings = ->
   # Hotkey binding to links with 'data-keybinding' attribute
   # Navigate link when hotkey pressed
   $('a[data-keybinding]').each (i, el) ->
