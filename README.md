@@ -129,5 +129,5 @@ Gosh! It's [here](https://github.com/kugaevsky/mousetrap-rails/blob/master/LICEN
 
 ## Authors
 
-* mousetrap-rails gem by [Nick Kugaevsky](http://kugaevsky.ru)
+* mousetrap-rails gem by [Nick Kugaevsky](http://kugaevsky.ru) and [contributors](https://github.com/kugaevsky/mousetrap-rails/graphs/contributors)
 * original mousetrap library by [Craig Campbell](http://craig.is/)
