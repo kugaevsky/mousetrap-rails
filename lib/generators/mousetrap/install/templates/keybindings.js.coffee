@@ -5,6 +5,9 @@ $(document).on 'page:change', ->
   handleKeyBindings()
 
 handleKeyBindings = ->
+  # As turbolinks does not refresh the page, some old keybindings could be still present. Therefore a reset is required.
+  Mousetrap.reset()
+  
   # Hotkey binding to links with 'data-keybinding' attribute
   # Navigate link when hotkey pressed
   $('a[data-keybinding]').each (i, el) ->
