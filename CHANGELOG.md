@@ -1,7 +1,12 @@
-## v0.0.12.wip
+## v0.0.13.wip
 
 * [] Add moustrap extensions generator
+
+## v0.0.12
+
+* minor turbolinks compatibility improvements
 * fix bug with numbers binding in data attributes
+* update mousetrap.js to 1.4.5
 
 ## v0.0.11
 
