@@ -1,6 +1,10 @@
 ## v0.0.13.wip
 
-* [] Add moustrap extensions generator
+* update mousetrap.js to 1.4.6
+* update readme
+* add rubinius versions in travis-ci config
+* add mousetrap/plugins
+* add mousetrap:update:plugins raketask
 
 ## v0.0.12
 
