@@ -46,122 +46,221 @@
 
 
       <section id="main_content">
-        <h1>Mousetrap::Rails <a href="http://coderwall.com/kugaevsky"><img src="http://api.coderwall.com/kugaevsky/endorsecount.png" alt="endorse"></a>
+        <h1>
+<a name="mousetraprails-" class="anchor" href="#mousetraprails-"><span class="octicon octicon-link"></span></a>Mousetrap::Rails <a href="http://coderwall.com/kugaevsky"><img src="http://api.coderwall.com/kugaevsky/endorsecount.png" alt="endorse"></a>
 </h1>
 
-<p><a href="https://gemnasium.com/kugaevsky/mousetrap-rails"><img src="https://gemnasium.com/kugaevsky/mousetrap-rails.png" alt="Dependency Status"></a> <a href="https://codeclimate.com/github/kugaevsky/mousetrap-rails"><img src="https://codeclimate.com/github/kugaevsky/mousetrap-rails.png" alt="Code Climate"></a> <a href="https://travis-ci.org/kugaevsky/mousetrap-rails"><img src="https://travis-ci.org/kugaevsky/mousetrap-rails.png?branch=master" alt="Build Status"></a></p>
+<p><a href="http://flattr.com/thing/1233054/Mousetrap-rails-gem"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a>  <a href="https://gemnasium.com/kugaevsky/mousetrap-rails"><img src="https://gemnasium.com/kugaevsky/mousetrap-rails.png" alt="Dependency Status"></a> <a href="https://codeclimate.com/github/kugaevsky/mousetrap-rails"><img src="https://codeclimate.com/github/kugaevsky/mousetrap-rails.png" alt="Code Climate"></a> <a href="https://travis-ci.org/kugaevsky/mousetrap-rails"><img src="https://travis-ci.org/kugaevsky/mousetrap-rails.png?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/kugaevsky/mousetrap-rails"><img src="https://coveralls.io/repos/kugaevsky/mousetrap-rails/badge.png?branch=master" alt="Coverage Status"></a></p>
 
 <p><a href="https://github.com/ccampbell/mousetrap">Mousetrap</a> is a javascript library for handling keyboard shortcuts in your web applications written by <a href="http://craig.is/">Craig Campbell</a>.</p>
 
 <p>The <code>mousetrap-rails</code> gem integrates Mousetrap javascript library with Rails asset pipeline.</p>
 
-<h2>Installation</h2>
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-<h3>Add mousetrap-rails gem to app</h3>
+<h3>
+<a name="add-mousetrap-rails-gem-to-app" class="anchor" href="#add-mousetrap-rails-gem-to-app"><span class="octicon octicon-link"></span></a>Add mousetrap-rails gem to app</h3>
 
 <p>Add this line to your application's Gemfile:</p>
 
-<div class="highlight"><pre><span class="n">gem</span> <span class="s1">'mousetrap-rails'</span>
+<div class="highlight highlight-ruby"><pre><span class="n">gem</span> <span class="s1">'mousetrap-rails'</span>
 </pre></div>
 
 <p>And then execute:</p>
 
-<div class="highlight"><pre><span class="nv">$ </span>bundle install
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>bundle install
 </pre></div>
 
-<h3>Run generator</h3>
+<h3>
+<a name="run-generator" class="anchor" href="#run-generator"><span class="octicon octicon-link"></span></a>Run generator</h3>
 
-<div class="highlight"><pre><span class="nv">$ </span>rails generate mousetrap:install
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>rails generate mousetrap:install
 </pre></div>
 
 <p>It will create a sample <code>keybindings.js.coffee</code> file in <code>app/assets/javascripts</code> and insert mousetrap-rails files to manifests of asset pipeline</p>
 
-<div class="highlight"><pre><span class="o">//=</span> <span class="nx">require</span> <span class="nx">mousetrap</span>     <span class="c1"># ---&gt; application.js</span>
+<div class="highlight highlight-coffeescript"><pre><span class="o">//=</span> <span class="nx">require</span> <span class="nx">mousetrap</span>     <span class="c1"># ---&gt; application.js</span>
 <span class="o">*=</span> <span class="nx">require</span> <span class="nx">mousetrap</span>      <span class="c1"># ---&gt; application.css</span>
 </pre></div>
 
 <p>Voila!</p>
 
-<h3>Latest (may be unstable) version</h3>
+<p>Also you can use mousetrap plugins. Require them in your <code>application.js</code> file</p>
+
+<div class="highlight highlight-javascript"><pre><span class="c1">//= require mousetrap/plugins       # To require all plugins</span>
+<span class="c1">//= require mousetrap/dictionary    # To require dictionary plugin</span>
+<span class="c1">//= require mousetrap/global        # To require global plugin</span>
+<span class="c1">//= require mousetrap/pause         # To require pause plugin</span>
+<span class="c1">//= require mousetrap/record        # To require record plugin</span>
+</pre></div>
+
+<p>See plugin descriptions below.</p>
+
+<h3>
+<a name="latest-may-be-unstable-version" class="anchor" href="#latest-may-be-unstable-version"><span class="octicon octicon-link"></span></a>Latest (may be unstable) version</h3>
 
 <p>Instead of <code>gem 'mousetrap-rails'</code> add to your Gemfile</p>
 
-<div class="highlight"><pre><span class="n">gem</span> <span class="s1">'mousetrap-rails'</span><span class="p">,</span> <span class="n">github</span><span class="p">:</span> <span class="s1">'kugaevsky/mousetrap-rails'</span>
+<div class="highlight highlight-ruby"><pre><span class="n">gem</span> <span class="s1">'mousetrap-rails'</span><span class="p">,</span> <span class="ss">github</span><span class="p">:</span> <span class="s1">'kugaevsky/mousetrap-rails'</span>
 </pre></div>
 
-<h2>Usage</h2>
+<p><code>Mousetrap-rails</code> versioning use <code>mousetrap.js</code> library version number.</p>
 
-<h3>Via data-attributes</h3>
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a name="via-data-attributes" class="anchor" href="#via-data-attributes"><span class="octicon octicon-link"></span></a>Via data-attributes</h3>
 
 <p>You can add keyboard navigation to your links by using <code>data-keybinding</code> attribute.</p>
 
-<div class="highlight"><pre><span class="p">=</span> <span class="n">link_to</span> <span class="s1">'Homepage'</span><span class="p">,</span> <span class="n">root_path</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="p">{</span> <span class="n">keybinding</span><span class="p">:</span> <span class="s1">'h'</span> <span class="p">}</span>          <span class="c1"># Press 'h' to navigate to homepage</span>
-<span class="p">=</span> <span class="n">link_to</span> <span class="s1">'About'</span><span class="p">,</span> <span class="n">about_path</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="p">{</span> <span class="n">keybinding</span><span class="p">:</span> <span class="s1">'["a", "c"]'</span> <span class="p">}</span>   <span class="c1"># Press 'a' or 'c' to navigate to about</span>
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">link_to</span> <span class="s1">'Homepage'</span><span class="p">,</span> <span class="n">root_path</span><span class="p">,</span> <span class="ss">data</span><span class="p">:</span> <span class="p">{</span> <span class="ss">keybinding</span><span class="p">:</span> <span class="s1">'h'</span> <span class="p">}</span>          <span class="c1"># Press 'h' to navigate to homepage</span>
+<span class="p">=</span> <span class="n">link_to</span> <span class="s1">'About'</span><span class="p">,</span> <span class="n">about_path</span><span class="p">,</span> <span class="ss">data</span><span class="p">:</span> <span class="p">{</span> <span class="ss">keybinding</span><span class="p">:</span> <span class="s1">'["a", "c"]'</span> <span class="p">}</span>   <span class="c1"># Press 'a' or 'c' to navigate to about</span>
 </pre></div>
 
 <p>You can jump to an input</p>
 
-<div class="highlight"><pre><span class="p">=</span> <span class="n">text_field_tag</span> <span class="s1">'Username'</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="p">{</span> <span class="n">keybinding</span><span class="p">:</span> <span class="s1">'u'</span> <span class="p">}</span>     <span class="c1"># Press 'u' to focus username input field</span>
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">text_field_tag</span> <span class="s1">'Username'</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="ss">data</span><span class="p">:</span> <span class="p">{</span> <span class="ss">keybinding</span><span class="p">:</span> <span class="s1">'u'</span> <span class="p">}</span>         <span class="c1"># Press 'u' to focus username input field</span>
 </pre></div>
 
-<h3>Via javascript</h3>
+<h3>
+<a name="via-javascript" class="anchor" href="#via-javascript"><span class="octicon octicon-link"></span></a>Via javascript</h3>
 
 <p>Any javascript function can be called with mousetrap</p>
 
-<div class="highlight"><pre><span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'f'</span><span class="p">,</span> <span class="nf">(e) -&gt;</span> <span class="nx">alert</span> <span class="s">'My perfect function called'</span>   <span class="c1"># Press 'f' to popup alert</span>
+<div class="highlight highlight-coffeescript"><pre><span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'f'</span><span class="p">,</span> <span class="nf">(e) -&gt;</span> <span class="nx">alert</span> <span class="s">'My perfect function called'</span>       <span class="c1"># Press 'f' to popup alert</span>
 </pre></div>
 
-<h3>More examples (from official guide)</h3>
+<h3>
+<a name="more-examples-from-official-guide" class="anchor" href="#more-examples-from-official-guide"><span class="octicon octicon-link"></span></a>More examples (from official guide)</h3>
 
-<div class="highlight"><pre><span class="c1"># single keys</span>
-<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'4'</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="nx">alert</span> <span class="s">'4 pressed!'</span>
-<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'x'</span><span class="p">,</span> <span class="p">(</span><span class="o">-&gt;</span> <span class="nx">alert</span> <span class="s">'x pressed!'</span><span class="p">),</span> <span class="s">'keyup'</span>
+<div class="highlight highlight-coffeescript"><pre><span class="c1"># single keys</span>
+<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'4'</span><span class="p">,</span> <span class="nf">-&gt;</span> <span class="nx">alert</span> <span class="s">'4 pressed!'</span>
+<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'x'</span><span class="p">,</span> <span class="p">(</span><span class="nf">-&gt;</span> <span class="nx">alert</span> <span class="s">'x pressed!'</span><span class="p">),</span> <span class="s">'keyup'</span>
 
 <span class="c1"># combinations</span>
-<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'command+shift+k'</span><span class="p">,</span> <span class="o">-&gt;</span>
+<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'command+shift+k'</span><span class="p">,</span> <span class="nf">-&gt;</span>
   <span class="nx">alert</span> <span class="s">'command+shift+k pressed!'</span>
   <span class="kc">false</span>
 
-<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="p">[</span><span class="s">'command+k'</span><span class="p">,</span> <span class="s">'ctrl+k'</span><span class="p">],</span> <span class="o">-&gt;</span>
+<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="p">[</span><span class="s">'command+k'</span><span class="p">,</span> <span class="s">'ctrl+k'</span><span class="p">],</span> <span class="nf">-&gt;</span>
   <span class="nx">alert</span> <span class="s">'command+k or ctrl+k pressed!'</span>
   <span class="kc">false</span>
 
 <span class="c1"># gmail style sequences</span>
-<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'g i'</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">'g i sequence pressed!'</span>
-<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'* a'</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">'* a sequence pressed!'</span>
+<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'g i'</span><span class="p">,</span> <span class="nf">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">'g i sequence pressed!'</span>
+<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'* a'</span><span class="p">,</span> <span class="nf">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">'* a sequence pressed!'</span>
 
 <span class="c1"># konami code!</span>
-<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'up up down down left right left right b a enter'</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">'You WIN!'</span>
+<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span> <span class="s">'up up down down left right left right b a enter'</span><span class="p">,</span> <span class="nf">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">'You WIN!'</span>
 </pre></div>
 
 <p>You can find full documentation on <a href="http://craig.is/killing/mice">Mousetrap library page</a>. Really, look there – there are plenty examples of using this awesome library.</p>
 
-<h3>Key binding hints (experimental)</h3>
+<h3>
+<a name="key-binding-hints-experimental" class="anchor" href="#key-binding-hints-experimental"><span class="octicon octicon-link"></span></a>Key binding hints (experimental)</h3>
 
 <p>You can display key binding hints near links with <code>data-keybinding</code> attribute by pressing <code>Alt+Shift+h</code>. Now it's just experimental feature for debugging purposes only.</p>
 
-<h2>TODO</h2>
+<h2>
+<a name="plugins" class="anchor" href="#plugins"><span class="octicon octicon-link"></span></a>Plugins</h2>
 
-<ul>
-<li>Add moustrap extensions generator</li>
-</ul><h2>Contributing</h2>
+<h3>
+<a name="global-bindings" class="anchor" href="#global-bindings"><span class="octicon octicon-link"></span></a>Global Bindings</h3>
+
+<pre><code>//= require mousetrap/global        # ---&gt; application.js
+</code></pre>
+
+<p>This extension allows you to specify keyboard events that will work anywhere including inside textarea/input fields.</p>
+
+<div class="highlight highlight-coffeescript"><pre><span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bindGlobal</span> <span class="s">'ctrl+s'</span><span class="p">,</span> <span class="nf">-&gt;</span> <span class="nx">_save</span><span class="p">()</span>
+</pre></div>
+
+<p>This means that a keyboard event bound using <code>Mousetrap.bind</code> will only work outside of form input fields, but using <code>Moustrap.bindGlobal</code> will work in both places.</p>
+
+<h3>
+<a name="bind-dictionary" class="anchor" href="#bind-dictionary"><span class="octicon octicon-link"></span></a>Bind dictionary</h3>
+
+<pre><code>//= require mousetrap/dictionary        # ---&gt; application.js
+</code></pre>
+
+<p>This extension overwrites the default bind behavior and allows you to bind multiple combinations in a single bind call.</p>
+
+<p>Usage looks like:</p>
+
+<div class="highlight highlight-coffeescript"><pre><span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">bind</span>
+    <span class="s">'a'</span><span class="o">:</span> <span class="nf">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
+    <span class="s">'b'</span><span class="o">:</span> <span class="nf">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">'b'</span><span class="p">)</span>
+</pre></div>
+
+<p>You can optionally pass in <code>keypress</code>, <code>keydown</code> or <code>keyup</code> as a second argument.</p>
+
+<p>Other bind calls work the same way as they do by default.</p>
+
+<h3>
+<a name="pauseunpause" class="anchor" href="#pauseunpause"><span class="octicon octicon-link"></span></a>Pause/unpause</h3>
+
+<pre><code>//= require mousetrap/pause             # ---&gt; application.js
+</code></pre>
+
+<p>This extension allows Mousetrap to be paused and unpaused without having to reset keyboard shortcuts and rebind them.</p>
+
+<div class="highlight highlight-coffeescript"><pre><span class="c1"># stop Mousetrap events from firing</span>
+<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">pause</span><span class="p">()</span>
+
+<span class="c1"># allow Mousetrap events to fire again</span>
+<span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">unpause</span><span class="p">()</span>
+</pre></div>
+
+<h3>
+<a name="record" class="anchor" href="#record"><span class="octicon octicon-link"></span></a>Record</h3>
+
+<pre><code>//= require mousetrap/record              # ---&gt; application.js
+</code></pre>
+
+<p>This extension lets you use Mousetrap to record keyboard sequences and play them back:</p>
+
+<pre lang="slim"><code>button onclick="recordSequence()" Record
+</code></pre>
+
+<div class="highlight highlight-coffeescript"><pre><span class="nv">recordSequence = </span><span class="p">()</span> <span class="nf">-&gt;</span>
+  <span class="nx">Mousetrap</span><span class="p">.</span><span class="nx">record</span> <span class="nf">(sequence) -&gt;</span>
+    <span class="c1"># sequence is an array like ['ctrl+k', 'c']</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s">'You pressed: '</span> <span class="o">+</span> <span class="nx">sequence</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s">' '</span><span class="p">))</span>
+</pre></div>
+
+<p><a href="http://craig.is/killing/mice#extensions">More detailed plugins description</a></p>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>Please submit all pull requests against latest <code>*.wip</code> branch. If your pull request contains new features, you <strong>must</strong> include relevant tests.</p>
 
+<p>You can easily update mousetrap.js library via rake tasks.</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>rake mousetrap:update          <span class="c"># Update main mousetrap javascript lib and its plugins</span>
+<span class="nv">$ </span>rake mousetrap:update:main     <span class="c"># Update main mousetrap javascript lib</span>
+<span class="nv">$ </span>rake mousetrap:update:plugins  <span class="c"># Update mousetrap javascript lib plugins</span>
+</pre></div>
+
 <p>Thanks in advance!</p>
 
-<h2>Changelog</h2>
+<h2>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h2>
 
 <p>All changes could be found in <a href="https://github.com/kugaevsky/mousetrap-rails/blob/master/CHANGELOG.md">CHANGELOG.md</a></p>
 
-<h2>License</h2>
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>Gosh! It's <a href="https://github.com/kugaevsky/mousetrap-rails/blob/master/LICENSE.md">here</a>.</p>
 
-<h2>Authors</h2>
+<h2>
+<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h2>
 
 <ul>
-<li>mousetrap-rails gem by <a href="http://kugaevsky.ru">Nick Kugaevsky</a>
+<li>mousetrap-rails gem by <a href="http://kugaevsky.ru">Nick Kugaevsky</a> and <a href="https://github.com/kugaevsky/mousetrap-rails/graphs/contributors">contributors</a>
 </li>
 <li>original mousetrap library by <a href="http://craig.is/">Craig Campbell</a>
 </li>
