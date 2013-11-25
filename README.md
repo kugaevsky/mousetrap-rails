@@ -5,7 +5,6 @@
 
 The `mousetrap-rails` gem integrates Mousetrap javascript library with Rails asset pipeline.
 
-
 ## Installation
 
 ### Add mousetrap-rails gem to app
@@ -37,6 +36,18 @@ It will create a sample `keybindings.js.coffee` file in `app/assets/javascripts`
 
 Voila!
 
+Also you can use mousetrap plugins. Require them in your `application.js` file
+
+```javascript
+//= require mousetrap/plugins       # To require all plugins
+//= require mousetrap/dictionary    # To require dictionary plugin
+//= require mousetrap/global        # To require global plugin
+//= require mousetrap/pause         # To require pause plugin
+//= require mousetrap/record        # To require record plugin
+```
+
+See plugin descriptions below.
+
 ### Latest (may be unstable) version
 
 Instead of `gem 'mousetrap-rails'` add to your Gemfile
@@ -59,7 +70,7 @@ You can add keyboard navigation to your links by using `data-keybinding` attribu
 You can jump to an input
 
 ```haml
-= text_field_tag 'Username', nil, data: { keybinding: 'u' }     # Press 'u' to focus username input field
+= text_field_tag 'Username', nil, data: { keybinding: 'u' }         # Press 'u' to focus username input field
 ```
 
 ### Via javascript
@@ -67,7 +78,7 @@ You can jump to an input
 Any javascript function can be called with mousetrap
 
 ```coffeescript
-Mousetrap.bind 'f', (e) -> alert 'My perfect function called'   # Press 'f' to popup alert
+Mousetrap.bind 'f', (e) -> alert 'My perfect function called'       # Press 'f' to popup alert
 ```
 
 ### More examples (from official guide)
@@ -100,18 +111,84 @@ You can find full documentation on [Mousetrap library page](http://craig.is/kill
 
 You can display key binding hints near links with `data-keybinding` attribute by pressing `Alt+Shift+h`. Now it's just experimental feature for debugging purposes only.
 
-## TODO
+## Plugins
 
-- [ ] Add moustrap extensions generator
+### Global Bindings
+
+    //= require mousetrap/global        # ---> application.js
+
+This extension allows you to specify keyboard events that will work anywhere including inside textarea/input fields.
+
+```coffeescript
+Mousetrap.bindGlobal 'ctrl+s', -> _save()
+```
+
+This means that a keyboard event bound using `Mousetrap.bind` will only work outside of form input fields, but using `Moustrap.bindGlobal` will work in both places.
+
+
+### Bind dictionary
+
+    //= require mousetrap/dictionary        # ---> application.js
+
+This extension overwrites the default bind behavior and allows you to bind multiple combinations in a single bind call.
+
+Usage looks like:
+
+```coffeescript
+Mousetrap.bind
+    'a': -> console.log('a')
+    'b': -> console.log('b')
+```
+
+You can optionally pass in `keypress`, `keydown` or `keyup` as a second argument.
+
+Other bind calls work the same way as they do by default.
+
+
+### Pause/unpause
+
+    //= require mousetrap/pause             # ---> application.js
+
+This extension allows Mousetrap to be paused and unpaused without having to reset keyboard shortcuts and rebind them.
+
+```coffeescript
+# stop Mousetrap events from firing
+Mousetrap.pause()
+
+# allow Mousetrap events to fire again
+Mousetrap.unpause()
+```
+
+
+### Record
+
+    //= require mousetrap/record              # ---> application.js
+
+This extension lets you use Mousetrap to record keyboard sequences and play them back:
+
+```slim
+button onclick="recordSequence()" Record
+```
+
+```coffeescript
+recordSequence = () ->
+  Mousetrap.record (sequence) ->
+    # sequence is an array like ['ctrl+k', 'c']
+    alert('You pressed: ' + sequence.join(' '))
+````
+
+[More detailed plugins description](http://craig.is/killing/mice#extensions)
 
 ## Contributing
 
 Please submit all pull requests against latest `*.wip` branch. If your pull request contains new features, you **must** include relevant tests.
 
-You can easily update mousetrap.js library via rake task.
+You can easily update mousetrap.js library via rake tasks.
 
 ```bash
-$ rake mousetrap:update
+$ rake mousetrap:update          # Update main mousetrap javascript lib and its plugins
+$ rake mousetrap:update:main     # Update main mousetrap javascript lib
+$ rake mousetrap:update:plugins  # Update mousetrap javascript lib plugins
 ```
 
 Thanks in advance!
