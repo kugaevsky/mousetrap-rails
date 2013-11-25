@@ -1,4 +1,4 @@
-## v0.0.13.wip
+## v1.4.6
 
 * update mousetrap.js to 1.4.6
 * update readme
