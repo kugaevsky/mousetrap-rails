@@ -56,6 +56,8 @@ Instead of `gem 'mousetrap-rails'` add to your Gemfile
 gem 'mousetrap-rails', github: 'kugaevsky/mousetrap-rails'
 ```
 
+`Mousetrap-rails` versioning use `mousetrap.js` library version number.
+
 ## Usage
 
 ### Via data-attributes
