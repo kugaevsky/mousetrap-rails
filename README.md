@@ -210,3 +210,7 @@ Gosh! It's [here](https://github.com/kugaevsky/mousetrap-rails/blob/master/LICEN
 
 * mousetrap-rails gem by [Nick Kugaevsky](http://kugaevsky.ru) and [contributors](https://github.com/kugaevsky/mousetrap-rails/graphs/contributors)
 * original mousetrap library by [Craig Campbell](http://craig.is/)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kugaevsky/mousetrap-rails/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
