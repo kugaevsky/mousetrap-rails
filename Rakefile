@@ -4,8 +4,18 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 task :default => :spec
 
-ORIGIN_URL  = "https://raw.github.com/ccampbell/mousetrap/master"
-BASE_FILE_PATH   = "vendor/assets/javascripts"
+ORIGIN_URL        = "https://raw.github.com/ccampbell/mousetrap/master"
+BASE_FILE_PATH    = "vendor/assets/javascripts"
+PLUGINS  = {
+  dictionary: 'plugins/bind-dictionary/mousetrap-bind-dictionary.js',
+  global:     'plugins/global-bind/mousetrap-global-bind.js',
+  pause:      'plugins/pause/mousetrap-pause.js',
+  record:     'plugins/record/mousetrap-record.js'
+}
+
+def download(source, dest)
+  system 'wget', source, "-O", dest
+end
 
 namespace :mousetrap do
   desc "Update main mousetrap javascript lib and its plugins"
@@ -26,12 +36,7 @@ namespace :mousetrap do
 
     desc "Update mousetrap javascript lib plugins"
     task :plugins do
-      plugins = { dictionary: 'plugins/bind-dictionary/mousetrap-bind-dictionary.js',
-                  global:     'plugins/global-bind/mousetrap-global-bind.js',
-                  pause:      'plugins/pause/mousetrap-pause.js',
-                  record:     'plugins/record/mousetrap-record.js'
-                  }
-      plugins.each_pair do |name, file|
+      PLUGINS.each_pair do |name, file|
         origin_url  = "#{ORIGIN_URL}/#{file}"
         file_path   = "#{BASE_FILE_PATH}/mousetrap/#{name}.js"
         download origin_url, file_path
@@ -39,8 +44,4 @@ namespace :mousetrap do
       end
     end
   end
-end
-
-def download(source, dest)
-  system 'wget', source, "-O", dest
 end
