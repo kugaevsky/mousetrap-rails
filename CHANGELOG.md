@@ -1,3 +1,9 @@
+## master
+
+* update readme
+* minor tasks refactoring
+* add Ruby 2.1.x to travis config
+
 ## v1.4.6
 
 * update mousetrap.js to 1.4.6
