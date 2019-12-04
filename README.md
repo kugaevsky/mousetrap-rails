@@ -1,5 +1,5 @@
 # Mousetrap::Rails
-[![Gem Version](https://badge.fury.io/rb/mousetrap-rails.svg)](http://badge.fury.io/rb/mousetrap-rails) [![Dependency Status](https://gemnasium.com/kugaevsky/mousetrap-rails.png)](https://gemnasium.com/kugaevsky/mousetrap-rails) [![Code Climate](https://codeclimate.com/github/kugaevsky/mousetrap-rails.png)](https://codeclimate.com/github/kugaevsky/mousetrap-rails) [![Build Status](https://travis-ci.org/kugaevsky/mousetrap-rails.png?branch=master)](https://travis-ci.org/kugaevsky/mousetrap-rails) [![Coverage Status](https://coveralls.io/repos/kugaevsky/mousetrap-rails/badge.png?branch=master)](https://coveralls.io/r/kugaevsky/mousetrap-rails) [![Gratipay](https://img.shields.io/gratipay/kugaevsky.svg)](https://gratipay.com/kugaevsky/) [![Downloads](https://img.shields.io/gem/dt/mousetrap-rails.svg)](https://rubygems.org/gems/mousetrap-rails)
+[![Gem Version](https://badge.fury.io/rb/mousetrap-rails.svg)](http://badge.fury.io/rb/mousetrap-rails)  [![Code Climate](https://codeclimate.com/github/kugaevsky/mousetrap-rails.png)](https://codeclimate.com/github/kugaevsky/mousetrap-rails) [![Build Status](https://travis-ci.org/kugaevsky/mousetrap-rails.png?branch=master)](https://travis-ci.org/kugaevsky/mousetrap-rails) [![Coverage Status](https://coveralls.io/repos/kugaevsky/mousetrap-rails/badge.png?branch=master)](https://coveralls.io/r/kugaevsky/mousetrap-rails) [![Downloads](https://img.shields.io/gem/dt/mousetrap-rails.svg)](https://rubygems.org/gems/mousetrap-rails)
 
 [Mousetrap](https://github.com/ccampbell/mousetrap) is a javascript library for handling keyboard shortcuts in your web applications written by [Craig Campbell](http://craig.is/).
 
@@ -210,7 +210,3 @@ Gosh! It's [here](https://github.com/kugaevsky/mousetrap-rails/blob/master/LICEN
 
 * mousetrap-rails gem by [Nick Kugaevsky](http://kugaevsky.ru) and [contributors](https://github.com/kugaevsky/mousetrap-rails/graphs/contributors)
 * original mousetrap library by [Craig Campbell](http://craig.is/)
-
-----
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kugaevsky/mousetrap-rails/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Flattr this](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/1233054/Mousetrap-rails-gem) [![endorse](http://api.coderwall.com/kugaevsky/endorsecount.png)](http://coderwall.com/kugaevsky)
